@@ -1,0 +1,207 @@
+@import './value.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: none;
+  padding: 15px;
+}
+
+.content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.507);
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.637);
+  outline: 1px solid rgb(0, 0, 0);
+}
+
+
+.sidebar{
+    .circle{
+        padding: 1.6rem;
+        margin: 1.5rem 3.8rem;
+        border-radius: 100%;
+    }
+    .item{
+        padding: 30px;
+        margin: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+}
+
+@each $name, $color in $main-colors {
+    .n-bg-#{$name} {
+        background-color: $color;
+    }
+}
+@each $name, $color in $main-colors {
+    .n-text-#{$name} {
+        color: $color;
+    }
+}
+
+
+.hide {
+    display: none;
+}
+
+.n-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: map-get($main-colors, black-25 );
+    transition: 0.5s;
+    z-index: 55;
+
+    
+
+    .n-modal-content {
+        position: fixed;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        // height: 75vh;
+        // background-color: map-get($main-colors, light );
+        // border-left: $modal-border;
+        // border-right: $modal-border;
+        // border-top: $modal-border;
+        // border-radius: 5px 5px 0 0;
+        // padding: 45px 45px 15px;
+
+        .n-modale-close {
+            position: absolute;
+            top: -2rem;
+            right: -2rem;
+            padding: 1px 10px 3px;
+            border-radius: 5px;
+            background: map-get($main-colors, gred );
+            color: map-get($main-colors, light );
+            cursor: pointer;
+        }
+
+        .n-m-title {
+            position: absolute;
+            top: -2.2rem;
+            max-width: 90%;
+            right: .5rem;
+            padding: .5rem;
+            text-align: center;
+            color: map-get($main-colors, light );
+            background-color: #17a2b8;
+            border-radius: 3px;
+
+            &-info-bloks {
+                display: inline-block;
+                vertical-align: top;
+
+                .header {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 100;
+                    margin-bottom: -5px;
+                }
+
+                .value {
+                    color: #bee5eb;
+                }
+            }
+        }
+    }
+
+}
+
+.n-form-group {
+    padding: 12px;
+}
+
+.n-input {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid map-get($main-colors, dgray-6 );
+    outline:none;
+    padding: 5px;
+    color: map-get($main-colors, dgray);
+    font-weight: 500;
+}
+
+.n-valid {
+    border-color: map-get($main-colors, green );
+    color:  map-get($main-colors, ggreen );
+}
+.n-invalid {
+    border-color: map-get($main-colors, red );
+    color:  map-get($main-colors, gred );
+}
+
+.n-border-h {
+    border-left: solid 1px;
+    border-right: solid 1px;
+    border-top: solid 3px;
+    border-radius: 3px 3px 0 0;
+    background-color: map-get($main-colors, dark-5 );
+}
+
+.n-bg-g-dblue-gBlue {
+    background-image: linear-gradient(map-get($main-colors, dblue), map-get($main-colors, gblue) );
+}
+
+.n-h-100 {
+    height: 100vh;
+}
+
+.n-button {
+    border: none;
+    color: map-get($main-colors, dgray );
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.n-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.n-button-green {
+    border: none;
+    background-color: map-get($main-colors, ggreen );
+    color: map-get($main-colors, light );
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.transition-100 {
+    transition: 1s;
+}
+.transition-50 {
+    transition: 0.5s;
+}
+.transition {
+    transition: 0.3s;
+}
+
